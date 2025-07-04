@@ -29,7 +29,7 @@ function generate_array() {
     cont.innerHTML = "";
 
     for (let i = 0; i < array_size; i++) {
-        let rawValue = Math.floor(Math.random() * 190) + 10;  // Logical value
+        let rawValue = Math.floor(Math.random() * 190) + 10;  
         let scaledHeight = (rawValue / 100) * CONTAINER_HEIGHT;
 
         div_sizes[i] = scaledHeight;
@@ -45,13 +45,13 @@ function generate_array() {
         divs[i].style.display = "inline-block";
         divs[i].style.verticalAlign = "bottom";
 
-        // ✅ set rawValue for tooltip (not pixel height)
+        
         divs[i].setAttribute("data-value", rawValue);
 
         cont.appendChild(divs[i]);
 
-        // 🟦 update height and color using updateBar
-        updateBar(i, scaledHeight, "green");  // blue default
+       
+        updateBar(i, scaledHeight, "green");  
     }
 }
 
@@ -100,22 +100,22 @@ window.onload = function () {
     isPaused = false;
     document.getElementById("pause-resume-button").textContent = "Pause";
 
-    // ✅ Re-enable algorithm dropdown and sort button
+    
     document.getElementById("algo-select").disabled = false;
     document.getElementById("sort").disabled = false;
 
-    // ✅ Re-enable all buttons
+    
     for (let btn of butts_algos) {
         btn.disabled = false;
         btn.classList.remove("butt_locked", "butt_selected");
     }
 
-    // ✅ Re-enable input sliders and array generator
+   
     inp_as.disabled = false;
     inp_gen.disabled = false;
     inp_aspeed.disabled = false;
 
-    // ✅ Clear time/space complexity display
+    
     document.getElementById("Time_Best").innerText = "";
     document.getElementById("Time_Average").innerText = "";
     document.getElementById("Time_Worst").innerText = "";
@@ -126,12 +126,11 @@ window.onload = function () {
             bar.style.backgroundColor = "green"; 
         }
     }
-    // ✅ Regenerate a fresh random array
+    
     generate_array();
 });
 
 
-    // Sort buttons
     for (var i = 0; i < butts_algos.length; i++) {
         butts_algos[i].addEventListener("click", runalgo);
     }
@@ -140,7 +139,7 @@ window.onload = function () {
 
 
 
-// Disable controls during sorting
+
 function disable_controls() {
     document.getElementById("sort").disabled = true;
     document.getElementById("algo-select").disabled = true;
@@ -157,7 +156,7 @@ function waitWhilePaused() {
         }
     });
 }
-// Sorting trigger
+
 document.getElementById("sort").addEventListener("click", function () {
     let selectedAlgo = document.getElementById("algo-select").value;
     disable_controls();
