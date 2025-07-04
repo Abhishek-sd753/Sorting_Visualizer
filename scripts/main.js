@@ -29,7 +29,7 @@ function generate_array() {
     cont.innerHTML = "";
 
     for (let i = 0; i < array_size; i++) {
-        let rawValue = Math.floor(Math.random() * 190) + 10;  
+        let rawValue = Math.floor(Math.random() * 90) + 10;  
         let scaledHeight = (rawValue / 100) * CONTAINER_HEIGHT;
 
         div_sizes[i] = scaledHeight;
