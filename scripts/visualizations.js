@@ -22,22 +22,22 @@ function vis_speed()
                 break;
     }
     
-    delay_time=10000/(Math.floor(array_size/10)*speed);        //Decrease numerator to increase speed.
+    delay_time=10000/(Math.floor(array_size/10)*speed);      
 }
 
-var delay_time=10000/(Math.floor(array_size/10)*speed);        //Decrease numerator to increase speed.
-var c_delay=0;//This is updated ov every div change so that visualization is visible.
+var delay_time=10000/(Math.floor(array_size/10)*speed);      
+var c_delay=0;
 
 function div_update(cont, height, color) {
     window.setTimeout(async function () {
-        await waitWhilePaused(); // ✅ pause support
+        await waitWhilePaused(); 
 
         cont.style.margin = "0% " + margin_size + "%";
         cont.style.width = (100 / array_size - 2 * margin_size) + "%";
         cont.style.height = height + "px";
         cont.style.backgroundColor = color;
 
-        // ✅ Update the tooltip during animation
+       
         cont.setAttribute("data-value", Math.round((height / CONTAINER_HEIGHT) * 100));
     }, c_delay += delay_time);
 }
