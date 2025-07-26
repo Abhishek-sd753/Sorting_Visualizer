@@ -77,7 +77,7 @@ async function sleep(ms) {
 }
 function getDelay() {
     const speed = document.getElementById("a_speed").value;
-    return 10 / speed; // You can adjust this multiplier
+    return 10 / speed; 
 }
 
 
@@ -90,10 +90,10 @@ window.onload = function () {
     update_array_size();
     pauseResumeBtn.disabled = true;
     restartBtn.disabled = true;
-    // Attach Restart button event
+   t
    document.getElementById("restart-button").addEventListener("click", () => {
      cancelSort = true;
-    // ⛔ Disable pause and restart buttons
+    
     pauseResumeBtn.disabled = true;
     restartBtn.disabled = true;
 
@@ -195,7 +195,7 @@ document.getElementById("pause-resume-button").addEventListener("click", () => {
     button.textContent = isPaused ? "Resume" : "Pause";
 
     if (!isPaused && pauseResolve) {
-        pauseResolve(); // Resume waiting animations
+        pauseResolve(); 
         pauseResolve = null;
     }
 });
